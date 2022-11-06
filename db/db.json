@@ -1,0 +1,278 @@
+{
+  "restaurant": [
+    {
+      "id": 1,
+      "city": "Göteborg",
+      "street": "Kungsgatan",
+      "streetNumber": 17,
+      "email": "goteborg@asiaexpress.se",
+      "telephone": "0729811127",
+      "openingHour": {
+        "monday": 16,
+        "tuesday": 16,
+        "wednesday": 16,
+        "thursday": 16,
+        "friday": 16,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 21
+      }
+    },
+    {
+      "id": 2,
+      "city": "Stockholm",
+      "street": "Storavägen",
+      "streetNumber": 8,
+      "email": "stockholm@asiaexpress.se",
+      "telephone": "0729811128",
+      "openingHour": {
+        "monday": 16,
+        "tuesday": 16,
+        "wednesday": 16,
+        "thursday": 16,
+        "friday": 16,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 21
+      }
+    },
+    {
+      "id": 3,
+      "city": "Stockholm",
+      "street": "Södergatan",
+      "streetNumber": 12,
+      "email": "malmo@asiaexpress.se",
+      "telephone": "0729811129",
+      "openingHour": {
+        "monday": 16,
+        "tuesday": 16,
+        "wednesday": 16,
+        "thursday": 16,
+        "friday": 16,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 22
+      }
+    },
+    {
+      "id": 4,
+      "city": "Lidköping",
+      "street": "Hamngatan",
+      "streetNumber": 4,
+      "email": "lidkoping@asiaexpress.se",
+      "telephone": "0729811130",
+      "openingHour": {
+        "monday": 17,
+        "tuesday": 17,
+        "wednesday": 17,
+        "thursday": 17,
+        "friday": 17,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 21
+      }
+    },
+    {
+      "city": "Skara",
+      "street": "Hamnvägen",
+      "streetNumber": "11",
+      "email": "someemail@test",
+      "telephone": "070000234",
+      "openingHour": {
+        "monday": "16",
+        "tuesday": "16",
+        "wednesday": "16",
+        "thursday": "16",
+        "friday": "16",
+        "saturday": "12",
+        "sunday": "12"
+      },
+      "closingHour": {
+        "monday": "22",
+        "tuesday": "22",
+        "wednesday": "22",
+        "thursday": "22",
+        "friday": "22",
+        "saturday": "22",
+        "sunday": "22"
+      },
+      "id": 5
+    },
+    {
+      "id": 6,
+      "city": "Göteborg",
+      "street": "Kungsgatan",
+      "streetNumber": 17,
+      "email": "goteborg@asiaexpress.se",
+      "telephone": "0729811127",
+      "openingHour": {
+        "monday": 16,
+        "tuesday": 16,
+        "wednesday": 16,
+        "thursday": 16,
+        "friday": 16,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 21
+      }
+    },
+    {
+      "id": 7,
+      "city": "Stockholm",
+      "street": "Storavägen",
+      "streetNumber": 8,
+      "email": "stockholm@asiaexpress.se",
+      "telephone": "0729811128",
+      "openingHour": {
+        "monday": 16,
+        "tuesday": 16,
+        "wednesday": 16,
+        "thursday": 16,
+        "friday": 16,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 21
+      }
+    },
+    {
+      "id": 8,
+      "city": "Stockholm",
+      "street": "Södergatan",
+      "streetNumber": 12,
+      "email": "malmo@asiaexpress.se",
+      "telephone": "0729811129",
+      "openingHour": {
+        "monday": 16,
+        "tuesday": 16,
+        "wednesday": 16,
+        "thursday": 16,
+        "friday": 16,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 22
+      }
+    },
+    {
+      "id": 9,
+      "city": "Lidköping",
+      "street": "Hamngatan",
+      "streetNumber": 4,
+      "email": "lidkoping@asiaexpress.se",
+      "telephone": "0729811130",
+      "openingHour": {
+        "monday": 17,
+        "tuesday": 17,
+        "wednesday": 17,
+        "thursday": 17,
+        "friday": 17,
+        "saturday": 12,
+        "sunday": 12
+      },
+      "closingHour": {
+        "monday": 22,
+        "tuesday": 22,
+        "wednesday": 22,
+        "thursday": 22,
+        "friday": 23,
+        "saturday": 23,
+        "sunday": 21
+      }
+    },
+    {
+      "city": "Skara",
+      "street": "Hamnvägen",
+      "streetNumber": "11",
+      "email": "someemail@test",
+      "telephone": "070000234",
+      "openingHour": {
+        "monday": "16",
+        "tuesday": "16",
+        "wednesday": "16",
+        "thursday": "16",
+        "friday": "16",
+        "saturday": "12",
+        "sunday": "12"
+      },
+      "closingHour": {
+        "monday": "22",
+        "tuesday": "22",
+        "wednesday": "22",
+        "thursday": "22",
+        "friday": "22",
+        "saturday": "22",
+        "sunday": "22"
+      },
+      "id": 10
+    }
+  ],
+  "user": [
+    {
+      "id": 1,
+      "username": "someuser",
+      "email": "admin@asiaexpress.se",
+      "password": "admin123"
+    },
+    {
+      "id": 2,
+      "username": "someuser",
+      "email": "test",
+      "password": "123"
+    }
+  ]
+}
