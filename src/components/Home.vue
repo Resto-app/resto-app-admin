@@ -122,11 +122,12 @@ tr:hover {
     background: #e2e5e8;
 } */
 .add-action {
-  font-size: 1rem;
-  height: 20px;
-  width: 140px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  height: 16px;
+  width: 110px;
   padding: 5px;
-  margin-top: 1.4em;
+  margin-top: 3em;
 }
 .edit-icon {
   font-size: 1.2rem;
