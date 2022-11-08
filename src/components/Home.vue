@@ -1,8 +1,8 @@
 <template>
   <Header />
-  <h1>Restauranger</h1>
-  <div class="action-container">
-    <router-link to="/add" class="add-action-link action-link">Lägg till restaurang</router-link>
+  <div class="content-header">
+    <h2>Restauranger</h2>
+    <router-link to="/add" class="add-action action-link">+  Ny restaurang</router-link>
   </div>
   <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
@@ -75,14 +75,18 @@ export default {
 }
 </script>
 <style>
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 2em;
+  margin-bottom: 1em;
+}
 table{
   width: 100%;
   table-layout: fixed;
 }
 .tbl-header{
-  /* background-color: #f2ca66; */
-  /* background-color: #af1763; */
-  background-color: #39a1f4;
+  background-color: #bcd6ff;
  }
 .tbl-content{
   height: 300px;
@@ -90,35 +94,39 @@ table{
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);
 }
+tr th {
+  pointer-events: none;
+}
 th{
-  padding: 15px 15px;
+  padding: 10px;
   text-align: left;
   font-weight: 700;
-  font-size: 1em;
-  color: #fff;
+  font-size: 1rem;
+  color: #15305a;
   text-transform: uppercase;
 }
 td{
-  padding: 15px;
+  padding: 10px;
   text-align: left;
   vertical-align:middle;
   font-weight: 300;
-  font-size: 1em;
+  font-size: 0.8rem;
   color: #222;
   border-bottom: solid 1px rgba(255,255,255,0.1);
 }
-.tbl-content tbody tr:nth-child(odd) {
+tr:hover {
+  background: #e2e5e8;
+}
+/* .tbl-content tbody tr:nth-child(odd) {
     color: #ffffff;
     background: #e2e5e8;
-}
-.add-action-link {
+} */
+.add-action {
   font-size: 1rem;
-  position: absolute;
-  top: 5em;
-  right: 2em;
-  width: 200px;
-  padding: 12px;
-  margin-bottom: 2rem;
+  height: 20px;
+  width: 140px;
+  padding: 5px;
+  margin-top: 1.4em;
 }
 .edit-icon {
   font-size: 1.2rem;
@@ -133,29 +141,6 @@ td{
   font-size: 1.2rem;
   color: rgb(216, 0, 0);
   background-color: transparent;
+  cursor: pointer;
 }
-/* table {
-  margin: 0 auto;
-  margin-bottom: 4em;
-  width:90%;
-  table-layout: fixed;
-}
-th {
-  background-color: #ffd467;
-}
-td {
-
-}
-th, td {
-  padding:.25em .5em;
-  text-align:left;
-}
-.resto-table thead th:nth-child(odd) {
-    color: #ffffff;
-    background: #324960;
-}
-
-.resto-table tr:nth-child(even) {
-    background: #dfdfdf;
-} */
 </style>

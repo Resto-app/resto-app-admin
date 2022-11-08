@@ -1,9 +1,11 @@
 <template>
   <Header />
-  <h1>Lägg till en ny restaurang</h1>
+  <div class="content-header">
+    <h2>Ny restaurang</h2>
+  </div>
   <form>
-    <div class="add-form-container">
-      <div class="add-info-container">
+    <div class="form-container">
+      <div class="contact-info">
         <p>Kontaktinformation</p>
         <input type="text" name="city" placeholder="Stad" v-model="restaurant.city" />
         <input type="text" name="street" placeholder="Gatuadress" v-model="restaurant.street" />
@@ -11,8 +13,8 @@
         <input type="text" name="email" placeholder="Email" v-model="restaurant.email" />
         <input type="text" name="telephone" placeholder="Telefon" v-model="restaurant.telephone" />
       </div>
-      <div class="add-time-container">
-      <div class="add-time-days">
+      <div class="time-container">
+      <div class="time-days">
         <p>Måndag: </p>
         <p>Tisdag: </p>
         <p>Onsdag: </p>
@@ -21,9 +23,9 @@
         <p>Lördag: </p>
         <p>Söndag: </p>
       </div>
-      <div class="add-time">
+      <div class="time-info">
         <p>Öppningstid</p>
-        <input type="text" name="openingHour.monday" placeholder="ex.16" v-model="restaurant.openingHour.monday" />
+        <input type="text" name="openingHour.monday" v-model="restaurant.openingHour.monday" />
         <input type="text" name="openingHour.tuesday" v-model="restaurant.openingHour.tuesday" />
         <input type="text" name="openingHour.wednesday" v-model="restaurant.openingHour.wednesday" />
         <input type="text" name="openingHour.thursday" v-model="restaurant.openingHour.thursday" />
@@ -31,7 +33,7 @@
         <input type="text" name="openingHour.saturday" v-model="restaurant.openingHour.saturday" />
         <input type="text" name="openingHour.sunday" v-model="restaurant.openingHour.sunday" />
       </div>
-      <div class="add-time">
+      <div class="time-info">
         <p>Stängningstid</p>
         <input type="text" name="closingHour.monday" v-model="restaurant.closingHour.monday" />
         <input type="text" name="closingHour.tuesday" v-model="restaurant.closingHour.tuesday" />
@@ -127,40 +129,3 @@ import Header from './Header.vue';
       }
   }
 </script>
-<style>
-.add-form-container {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-}
-.add-form-container p {
-  font-size: 18px;
-  font-weight: bold;
-}
-.add-info-container p {
-  text-align: left;
-}
-form .action-link {
-  margin-top: 2em;
-  margin-bottom: 3em;
-  font-size: 16px;
-}
-.add-time-container {
-  width: 360px;
-  display: flex;
-  justify-content: space-between;
-}
-.add-time-days {
-  margin-top: 2.8em;
-}
-.add-time-days p {
-  margin-bottom: 1.4em;
-}
-.add-time input {
-  width: 25px;
-  height: 20px;
-  padding: 5px;
-  margin-bottom: 1em;
-}
-</style>
