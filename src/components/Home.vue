@@ -1,38 +1,40 @@
 <template>
   <Header />
-  <div class="content-header">
-    <h2>Restauranger</h2>
-    <router-link to="/add" class="add-action action-link">+  Ny restaurang</router-link>
-  </div>
-  <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th class="table-header">Stad</th>
-          <th class="table-header">Adress</th>
-          <th class="table-header">Email</th>
-          <th class="table-header">Telefon</th>
-          <th class="table-header"></th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody>
-        <tr v-for="item in restaurant" :key="item.id">
-          <td>{{ item.city }}</td>
-          <td>{{ item.street }} {{ item.streetNumber }}</td>
-          <td>{{ item.email }}</td>
-          <td>{{ item.telephone }}</td>     
-          <td>
-            <router-link :to="'/update/'+item.id" class="edit-icon"><font-awesome-icon icon="fa-solid fa-pen" /></router-link>
-            <button @click="deleteRestaurant(item.id)" class="delete-icon"><font-awesome-icon icon="fa-solid fa-trash-can" /></button>
-          </td>
-        </tr>
-      </tbody>   
-    </table>
-  </div>
+  <section>
+    <div class="content-header">
+      <h2>Restauranger</h2>
+      <router-link to="/add" class="add-action action-link">+  Ny restaurang</router-link>
+    </div>
+      <div class="tbl-header">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <thead>
+            <tr>
+              <th class="table-header">Stad</th>
+              <th class="table-header">Adress</th>
+              <th class="table-header">Email</th>
+              <th class="table-header">Telefon</th>
+              <th class="table-header"></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="tbl-content">
+        <table cellpadding="0" cellspacing="0" border="0">
+          <tbody>
+            <tr v-for="item in restaurant" :key="item.id">
+              <td>{{ item.city }}</td>
+              <td>{{ item.street }} {{ item.streetNumber }}</td>
+              <td>{{ item.email }}</td>
+              <td>{{ item.telephone }}</td>     
+              <td>
+                <router-link :to="'/update/'+item.id" class="edit-icon"><font-awesome-icon icon="fa-solid fa-pen" /></router-link>
+                <button @click="deleteRestaurant(item.id)" class="delete-icon"><font-awesome-icon icon="fa-solid fa-trash-can" /></button>
+              </td>
+            </tr>
+          </tbody>   
+        </table>
+      </div>
+  </section>
 </template>
 <script>
 import Header from './Header.vue'
@@ -59,28 +61,21 @@ export default {
     },
     async loadData() {
       let user = localStorage.getItem('user-info');
-      this.name=JSON.parse(user).name;
-      if(!user)
-      {
+      this.name=JSON.parse(user).name
+      if(!user) {
           this.$router.push({name: 'Login'})
       }
       let result = await axios.get("http://localhost:3000/restaurant");
-      this.restaurant = result.data;
+      this.restaurant = result.data
     }
   },
   async mounted()
   {
-      this.loadData();
+      this.loadData()
   }
 }
 </script>
 <style>
-.content-header {
-  display: flex;
-  justify-content: space-between;
-  padding: 0em 2em;
-  margin-bottom: 1em;
-}
 table{
   width: 100%;
   table-layout: fixed;
@@ -124,8 +119,8 @@ tr:hover {
 .add-action {
   font-size: 0.8rem;
   font-weight: 500;
-  height: 16px;
-  width: 110px;
+  height: 26px;
+  width: 120px;
   padding: 5px;
   margin-top: 3em;
 }

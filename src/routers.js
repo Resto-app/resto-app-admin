@@ -5,6 +5,7 @@ import Login from './components/Login.vue'
 import Add from './components/Add.vue'
 import Update from './components/Update.vue'
 import Meny from './components/Meny.vue'
+import Booking from './components/Booking.vue'
 
 const routes = [
   {
@@ -36,6 +37,11 @@ const routes = [
     name: "Meny",
     component: Meny,
     path: "/meny",
+  },
+  {
+    name: "Booking",
+    component: Booking,
+    path: "/booking",
   },
 ];
 

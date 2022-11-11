@@ -1,39 +1,41 @@
 <template>
     <Header/>
-    <div class="content-header">
-        <h2>Veckans meny</h2>
-    </div>
-    <form>
-        <div class="form-container">
-            <div class="week-days">
-                <p>Måndag: </p>
-                <p>Tisdag: </p>
-                <p>Onsdag: </p>
-                <p>Torsdag: </p>
-                <p>Fredag: </p>
-                <p>Lördag: </p>
-                <p>Söndag: </p>
-            </div>
-            <div class="week-meny">
-                <input type="text" name="monday" placeholder="Måndag" v-model="meny.day.monday" />
-                <input type="text" name="tuesday" placeholder="Tisdag" v-model="meny.day.tuesday" />
-                <input type="text" name="wednesday" placeholder="Onsdag" v-model="meny.day.wednesday" />
-                <input type="text" name="thursday" placeholder="Torsdag" v-model="meny.day.thursday" />
-                <input type="text" name="friday" placeholder="Fredag" v-model="meny.day.friday" />
-                <input type="text" name="saturday" placeholder="Lördag" v-model="meny.day.saturday" />
-                <input type="text" name="sunday" placeholder="Söndag" v-model="meny.day.sunday" />
-            </div>
-            <div class="week-info">
-                <p>Inkluderar: </p>
-                <p>Pris: </p>
-            </div>
-            <div class="week-info">
-                <textarea name="Text1" cols="40" rows="3" placeholder="Inkluderar.." v-model="meny.extra"></textarea>
-                <input type="text" name="price" placeholder="Pris" v-model="meny.price" />
-            </div>
+    <section>
+        <div class="content-header">
+            <h2>Veckans meny</h2>
         </div>
-        <button type="button" class="save-action action-link" @click="updateMeny">Spara</button>
-    </form>
+            <form>
+                <div class="form-container">
+                    <div class="week-days">
+                        <p>Måndag: </p>
+                        <p>Tisdag: </p>
+                        <p>Onsdag: </p>
+                        <p>Torsdag: </p>
+                        <p>Fredag: </p>
+                        <p>Lördag: </p>
+                        <p>Söndag: </p>
+                    </div>
+                    <div class="week-meny">
+                        <input type="text" name="monday" placeholder="Måndag" v-model="meny.day.monday" />
+                        <input type="text" name="tuesday" placeholder="Tisdag" v-model="meny.day.tuesday" />
+                        <input type="text" name="wednesday" placeholder="Onsdag" v-model="meny.day.wednesday" />
+                        <input type="text" name="thursday" placeholder="Torsdag" v-model="meny.day.thursday" />
+                        <input type="text" name="friday" placeholder="Fredag" v-model="meny.day.friday" />
+                        <input type="text" name="saturday" placeholder="Lördag" v-model="meny.day.saturday" />
+                        <input type="text" name="sunday" placeholder="Söndag" v-model="meny.day.sunday" />
+                    </div>
+                    <div class="week-info">
+                        <p>Inkluderar: </p>
+                        <p>Pris: </p>
+                    </div>
+                    <div class="week-info">
+                        <textarea name="Text1" cols="40" rows="3" placeholder="Inkluderar.." v-model="meny.extra"></textarea>
+                        <input type="text" name="price" placeholder="Pris" v-model="meny.price" />
+                    </div>
+                </div>
+                <button type="button" class="save-action action-link" @click="updateMeny">Spara</button>
+            </form>
+    </section>
 </template>
 <script>
 import axios from 'axios';
@@ -107,17 +109,17 @@ export default {
 }
 .week-days p {
     margin-top: 0.5em;
-    margin-bottom: 3em;
+    margin-bottom: 2.6em;
 }
 .week-info p {
     margin-top: 0.5em;
-    margin-bottom: 4.6em;
+    margin-bottom: 4.2em;
 }
 .week-info input {
-    width: 30px;
+    width: 35px;
     height: 30px;
     margin-left: 0;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 textarea {
     font-family: 'Montserrat', sans-serif;
@@ -128,8 +130,5 @@ textarea {
     margin-left: auto;
     border: 1px solid #1a50a0;
     border-radius: 2px;
-}
-.save-action {
-    margin-top: 1em;
 }
 </style>

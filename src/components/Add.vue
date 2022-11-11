@@ -1,52 +1,54 @@
 <template>
   <Header />
-  <div class="content-header">
-    <h2>Ny restaurang</h2>
-  </div>
-  <form>
-    <div class="form-container">
-      <div class="contact-info">
-        <p>Kontaktinformation</p>
-        <input type="text" name="city" placeholder="Stad" v-model="restaurant.city" />
-        <input type="text" name="street" placeholder="Gatuadress" v-model="restaurant.street" />
-        <input type="text" name="streetNumber" placeholder="Gatunummer" v-model="restaurant.streetNumber" />
-        <input type="text" name="email" placeholder="Email" v-model="restaurant.email" />
-        <input type="text" name="telephone" placeholder="Telefon" v-model="restaurant.telephone" />
-      </div>
-      <div class="time-container">
-      <div class="time-days">
-        <p>Måndag: </p>
-        <p>Tisdag: </p>
-        <p>Onsdag: </p>
-        <p>Torsdag: </p>
-        <p>Fredag: </p>
-        <p>Lördag: </p>
-        <p>Söndag: </p>
-      </div>
-      <div class="time-info">
-        <p>Öppningstid</p>
-        <input type="text" name="openingHour.monday" v-model="restaurant.openingHour.monday" />
-        <input type="text" name="openingHour.tuesday" v-model="restaurant.openingHour.tuesday" />
-        <input type="text" name="openingHour.wednesday" v-model="restaurant.openingHour.wednesday" />
-        <input type="text" name="openingHour.thursday" v-model="restaurant.openingHour.thursday" />
-        <input type="text" name="openingHour.friday" v-model="restaurant.openingHour.friday" />
-        <input type="text" name="openingHour.saturday" v-model="restaurant.openingHour.saturday" />
-        <input type="text" name="openingHour.sunday" v-model="restaurant.openingHour.sunday" />
-      </div>
-      <div class="time-info">
-        <p>Stängningstid</p>
-        <input type="text" name="closingHour.monday" v-model="restaurant.closingHour.monday" />
-        <input type="text" name="closingHour.tuesday" v-model="restaurant.closingHour.tuesday" />
-        <input type="text" name="closingHour.wednesday" v-model="restaurant.closingHour.wednesday" />
-        <input type="text" name="closingHour.thursday" v-model="restaurant.closingHour.thursday" />
-        <input type="text" name="closingHour.friday" v-model="restaurant.closingHour.friday" />
-        <input type="text" name="closingHour.saturday" v-model="restaurant.closingHour.saturday" />
-        <input type="text" name="closingHour.sunday" v-model="restaurant.closingHour.sunday" />
+  <section>
+    <div class="content-header">
+      <h2>Ny restaurang</h2>
+    </div>
+    <form>
+      <div class="form-container">
+        <div class="contact-info">
+          <p>Kontaktinformation</p>
+          <input type="text" name="city" placeholder="Stad" v-model="restaurant.city" />
+          <input type="text" name="street" placeholder="Gatuadress" v-model="restaurant.street" />
+          <input type="text" name="streetNumber" placeholder="Gatunummer" v-model="restaurant.streetNumber" />
+          <input type="text" name="email" placeholder="Email" v-model="restaurant.email" />
+          <input type="text" name="telephone" placeholder="Telefon" v-model="restaurant.telephone" />
+        </div>
+        <div class="time-container">
+        <div class="time-days">
+          <p>Måndag: </p>
+          <p>Tisdag: </p>
+          <p>Onsdag: </p>
+          <p>Torsdag: </p>
+          <p>Fredag: </p>
+          <p>Lördag: </p>
+          <p>Söndag: </p>
+        </div>
+        <div class="time-info">
+          <p>Öppningstid</p>
+          <input type="text" name="openingHour.monday" v-model="restaurant.openingHour.monday" />
+          <input type="text" name="openingHour.tuesday" v-model="restaurant.openingHour.tuesday" />
+          <input type="text" name="openingHour.wednesday" v-model="restaurant.openingHour.wednesday" />
+          <input type="text" name="openingHour.thursday" v-model="restaurant.openingHour.thursday" />
+          <input type="text" name="openingHour.friday" v-model="restaurant.openingHour.friday" />
+          <input type="text" name="openingHour.saturday" v-model="restaurant.openingHour.saturday" />
+          <input type="text" name="openingHour.sunday" v-model="restaurant.openingHour.sunday" />
+        </div>
+        <div class="time-info">
+          <p>Stängningstid</p>
+          <input type="text" name="closingHour.monday" v-model="restaurant.closingHour.monday" />
+          <input type="text" name="closingHour.tuesday" v-model="restaurant.closingHour.tuesday" />
+          <input type="text" name="closingHour.wednesday" v-model="restaurant.closingHour.wednesday" />
+          <input type="text" name="closingHour.thursday" v-model="restaurant.closingHour.thursday" />
+          <input type="text" name="closingHour.friday" v-model="restaurant.closingHour.friday" />
+          <input type="text" name="closingHour.saturday" v-model="restaurant.closingHour.saturday" />
+          <input type="text" name="closingHour.sunday" v-model="restaurant.closingHour.sunday" />
+        </div>
       </div>
     </div>
-  </div>
-  <button type="button" class="action-link" @click="addRestaurant">Spara</button>
-  </form>
+    <button type="button" class="action-link" @click="addRestaurant">Spara</button>
+    </form>
+  </section>
 </template>
 <script>
 import axios from 'axios';

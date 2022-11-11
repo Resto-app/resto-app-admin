@@ -3,24 +3,39 @@
 </template>
 
 <script>
+import '../src/style.css'
 export default {
   name: 'App',
-
 }
 </script>
-
 <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* font-family: 'Poppins', sans-serif; */
+}
 #app {
+  margin: 0;
+  padding: 0;
+}
+body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin-left: 160px;
   text-align: center;
   color: #2c3e50;
 }
-body {
-  padding: 0;
-  margin: 0;
+section {
+  display: block;
+  margin-left: 160px;
+}
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0em 2em;
+  margin-top: 1em;
+  margin-bottom: 1em;
 }
 h2 {
   text-align: left;
@@ -65,9 +80,11 @@ h2 {
 }
 .form-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 80%;
   margin: 0 auto;
+  margin-top: 2em;
+  margin-bottom: 3em;
 }
 .form-container p {
   font-size: 0.8rem;
@@ -82,13 +99,16 @@ h2 {
   justify-content: space-between;
 }
 .time-days {
-  margin-top: 2.2em;
+  margin-top: 2.8em;
+}
+.contact-info p, .time-info p {
+  margin-bottom: 1em;
 }
 .time-days p {
-  margin-bottom: 2.6em;
+  margin-bottom: 2.2em;
 }
 .time-info input {
-  width: 20px;
+  width: 28px;
   height: 25px;
   margin-bottom: 20px;
   padding-left: 5px;

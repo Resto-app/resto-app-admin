@@ -1,11 +1,13 @@
 <template>
-    <div class="nav">
-        <p class="current-user"><font-awesome-icon icon="fa-solid fa-user" /> {{ username }}</p>
-        <router-link to="/">Restauranger</router-link>
-        <router-link to="/meny">Meny</router-link>
-        <router-link to="/">Bokningar</router-link>
-        <a @click="logout" href="/">Logga ut</a>
-    </div>
+    <header>
+        <div class="nav">
+            <p class="current-user"><font-awesome-icon icon="fa-solid fa-user" /> {{ username }}</p>
+            <router-link to="/">Restauranger</router-link>
+            <router-link to="/meny">Meny</router-link>
+            <router-link to="/booking">Bokningar</router-link>
+            <a @click="logout" href="/">Logga ut</a>
+        </div>
+    </header>
 </template>
 <script>
 export default {

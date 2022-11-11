@@ -11,8 +11,10 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import { faPen } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from "@fortawesome/free-solid-svg-icons"
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons"
 /* add icons to the library */
-library.add(faUser, faTrashCan, faPen)
+library.add(faUser, faTrashCan, faPen, faAngleDown, faMagnifyingGlass)
 
 /* add font awesome icon component */
 //Vue.component('font-awesome-icon', FontAwesomeIcon)
