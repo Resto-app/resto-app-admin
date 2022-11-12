@@ -132,10 +132,10 @@
     },
     {
       "id": 6,
-      "city": "Göteborg",
-      "street": "Kungsgatan",
-      "streetNumber": 17,
-      "email": "goteborg@asiaexpress.se",
+      "city": "Jönköping",
+      "street": "Almgatan",
+      "streetNumber": 22,
+      "email": "jonköping@asiaexpress.se",
       "telephone": "0729811127",
       "openingHour": {
         "monday": 16,
@@ -158,10 +158,10 @@
     },
     {
       "id": 7,
-      "city": "Stockholm",
-      "street": "Storavägen",
-      "streetNumber": 8,
-      "email": "stockholm@asiaexpress.se",
+      "city": "Borås",
+      "street": "Landsvägen",
+      "streetNumber": 1,
+      "email": "boras@asiaexpress.se",
       "telephone": "0729811128",
       "openingHour": {
         "monday": 16,
@@ -184,9 +184,9 @@
     },
     {
       "id": 8,
-      "city": "Stockholm",
-      "street": "Södergatan",
-      "streetNumber": 12,
+      "city": "Malmö",
+      "street": "Solrosvägen",
+      "streetNumber": 15,
       "email": "malmo@asiaexpress.se",
       "telephone": "0729811129",
       "openingHour": {
@@ -210,10 +210,10 @@
     },
     {
       "id": 9,
-      "city": "Lidköping",
-      "street": "Hamngatan",
-      "streetNumber": 4,
-      "email": "lidkoping@asiaexpress.se",
+      "city": "Kalmar",
+      "street": "Sergelstorg",
+      "streetNumber": 2,
+      "email": "kalmar@asiaexpress.se",
       "telephone": "0729811130",
       "openingHour": {
         "monday": 17,

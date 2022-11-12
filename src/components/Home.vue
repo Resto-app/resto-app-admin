@@ -1,7 +1,7 @@
 <template>
   <Header />
   <section>
-    <div class="content-header">
+    <div class="header-content">
       <h2>Restauranger</h2>
       <router-link to="/add" class="add-action action-link">+  Ny restaurang</router-link>
     </div>
@@ -60,18 +60,17 @@ export default {
       }
     },
     async loadData() {
-      let user = localStorage.getItem('user-info');
-      this.name=JSON.parse(user).name
-      if(!user) {
-          this.$router.push({name: 'Login'})
-      }
       let result = await axios.get("http://localhost:3000/restaurant");
       this.restaurant = result.data
     }
   },
   async mounted()
   {
-      this.loadData()
+    let user = localStorage.getItem('user-info');
+    if(!user) {
+      this.$router.push({name: 'Login'})
+    }
+    this.loadData()
   }
 }
 </script>

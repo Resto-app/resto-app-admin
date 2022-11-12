@@ -1,7 +1,7 @@
 <template>
   <Header />
   <section>
-    <div class="content-header">
+    <div class="header-content">
       <h2>Ny restaurang</h2>
     </div>
     <form>

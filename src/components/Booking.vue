@@ -1,40 +1,38 @@
 <template>
     <Header />
     <section>
-        <div class="content-header">
+        <div class="header-content">
             <h2>Bokningar</h2>
         </div>
-            <div class="wrapper">
+            <div class="select-wrapper">
                 <div class="select-btn" @click="toggleBox">
-                    <span>Select Restaurant</span>
+                    <span>{{ this.selectedCity }}</span>
                     <font-awesome-icon icon="fa-solid fa-angle-down" v-bind:style="[onClicked ? {'transform': 'rotate(-180deg)'} : '']"/>
                 </div>
-                <div class="content" v-if="onClicked" >
+                <div v-if="onClicked" class="select-content" >
                     <div class="search">
                         <font-awesome-icon icon="fa-solid fa-magnifying-glass" />
-                        <input type="text" placeholder="Sök"/>
+                        <input v-model="searchValue" type="text" placeholder="Sök"/>
                     </div>
-                    <ul class="options">
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
-                        <li>hello</li>
-                        <li>hello2</li>
+                    <ul v-if="restaurantList.length" class="options">
+                        <li v-for="item in restaurantList" :key="item.id" @click="showBooking(item)" v-cloak>
+                            <div class="options-wrapper">
+                                <h4>{{ item.city }}</h4>
+                                <p>{{ item.street }} {{ item.streetNumber }}</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul v-else class="options">
+                        <li>
+                            <div class="options-wrapper">
+                                <h4><em>Inga restauranger</em></h4>
+                            </div>
+                        </li>
                     </ul>
                 </div>
+            </div>
+            <div v-if="isSelected" class="booking-content">
+                <h3>This is booking content for {{ this.selectedRestaurant.city }}</h3>
             </div>
     </section>
 </template>
@@ -49,34 +47,51 @@ export default {
     },
     data() {
         return {
-            restaurant: [],
-            onClicked: false
+            restaurants: [],
+            onClicked: false,
+            searchValue: '',
+            isSelected: false,
+            selectedRestaurant: {}, 
+            selectedCity: 'Välj Restaurang',  
         }
     },
     methods: {
         toggleBox() {
             this.onClicked = !this.onClicked
+            this.loadData();
+        },
+        showBooking(restaurant) {
+            this.isSelected = true
+            this.selectedRestaurant = restaurant
+            this.selectedCity = restaurant.city
+        },
+        async loadData() {
+        let result = await axios.get("http://localhost:3000/restaurant");
+        this.restaurants = result.data;
         }
     },
-    async loadData() {
+    computed: {
+        restaurantList() {
+            if(this.searchValue.trim().length > 0) {
+                return this.restaurants.filter((restaurant) => restaurant.city.toLowerCase().includes(this.searchValue.trim().toLowerCase()))
+            }
+            return this.restaurants
+        }
+    },
+    async mounted() {
         let user = localStorage.getItem('user-info');
-        this.name=JSON.parse(user).name
         if(!user) {
             this.$router.push({name: 'Login'})
         }
-        let result = await axios.get("http://localhost:3000/restaurant")
-        this.restaurant = result.data
-    },
-    async mounted() {
-        this.loadData()
     }
 }
 </script>
 <style>
-
-.wrapper {
-    width: 370px;
-    margin: 130px auto 0;
+.select-wrapper {
+    width: 220px;
+    margin-left: 2em;
+    margin-top: 1em;
+    z-index: 1;
 }
 .select-btn, .options li {
     display: flex;
@@ -84,41 +99,42 @@ export default {
     align-items: center;
 }
 .select-btn {
-    height: 65px;
-    font-size: 22px;
+    height: 40px;
+    font-size: 1rem;
+    font-weight: 500;
     padding: 0 20px;
     border-radius: 7px;
     justify-content: space-between;
     border: 1px solid #ccc;
 }
 .select-btn svg {
-    font-size: 31px;
+    font-size: 20px;
     transition: transform 0.3s linear; 
 }
-.content {
-    padding: 20px;
+.select-content {
+    padding: 10px;
     margin-top: 15px;
     border-radius: 7px;
     border: 1px solid #ccc;
 }
-.content .search {
+.select-content .search {
     position: relative;
 }
 .search svg {
-    left: 15px;
+    left: 8px;
     color: #999;
-    font-size: 20px;
-    line-height: 53px;
-    margin-top: 16px;
+    font-size: 1rem;
+    line-height: 52px;
+    margin-top: 7px;
     position: absolute;
 }
 .search input {
-    height: 53px;
+    height: 30px;
     width: 100%;
     outline: none;
-    font-size: 17px;
+    font-size: 14px;
     border-radius: 5px;
-    padding: 0 15px 0 43px;
+    padding: 0 5px 0 30px;
     border: 1px solid #b3b3b3;
 }
 .options::-webkit-scrollbar {
@@ -132,18 +148,27 @@ export default {
     background: #ccc;
     border-radius: 25px;
 }
-.content .options {
-    margin-top: 10px;
-    max-height: 250px;
+.select-content .options {
+    margin-top: 15px;
+    max-height: 160px;
     overflow-y: auto;
 }
 .options li {
-    height: 50px;
-    padding: 0 13px;
-    font-size: 21px;
+    height: 45px;
+    padding: 0 10px;
+    font-size: 0.8rem;
     border-radius: 5px;
 }
 .options li:hover {
     background: #f2f2f2;
+}
+.options-wrapper {
+    text-align: left;
+}
+.booking-content {
+    display: fixed;
+    position: absolute;
+    top: 120px;
+    left: 500px;
 }
 </style>

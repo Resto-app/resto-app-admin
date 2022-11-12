@@ -1,7 +1,7 @@
 <template>
     <Header/>
     <section>
-        <div class="content-header">
+        <div class="header-content">
             <h2>Veckans meny</h2>
         </div>
             <form>

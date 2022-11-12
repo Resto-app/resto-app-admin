@@ -30,7 +30,7 @@ section {
   display: block;
   margin-left: 160px;
 }
-.content-header {
+.header-content {
   display: flex;
   justify-content: space-between;
   padding: 0em 2em;
