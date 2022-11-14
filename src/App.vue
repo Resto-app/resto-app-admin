@@ -15,10 +15,6 @@ export default {
   box-sizing: border-box;
   /* font-family: 'Poppins', sans-serif; */
 }
-#app {
-  margin: 0;
-  padding: 0;
-}
 body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -40,7 +36,7 @@ section {
 h2 {
   text-align: left;
 }
-.login input, .contact-info input, .time-info input, .update input, .week-days input, .week-meny input, .week-info input {
+.login-form input, .contact-info input, .time-info input, .update input, .week-days input, .week-meny input, .week-info input {
     width: 300px;
     height: 40px;
     padding-left: 20px;
@@ -51,7 +47,7 @@ h2 {
     border: 1px solid #1a50a0;
     border-radius: 2px;
 }
-.login button, form button, .update button {
+form button, .update button {
     width: 120px;
     height: 40px;
     border: 1px solid #1a50a0;

@@ -1,41 +1,31 @@
 <template>
     <header>
-        <div class="nav">
+        <nav class="navbar">
             <p class="current-user"><font-awesome-icon icon="fa-solid fa-user" /> {{ username }}</p>
             <router-link to="/">Restauranger</router-link>
             <router-link to="/meny">Meny</router-link>
             <router-link to="/booking">Bokningar</router-link>
             <a @click="logout" href="/">Logga ut</a>
-        </div>
+        </nav>
     </header>
 </template>
 <script>
 export default {
     // eslint-disable-next-line vue/multi-word-component-names
     name: 'Header',
-    data() {
-        return {
-            username: ''
-        }
+    props: {
+        username: String
     },
     methods: {
         logout() {
             localStorage.clear();
             this.$router.push({name: 'Login'})
         }
-    },
-    mounted() {
-        let user = localStorage.getItem('user-info');
-        this.username=JSON.parse(user).username;
-        if(!user)
-        {
-            this.$router.push({name: 'Login'})
-        }
     }
 }
 </script>
 <style>
-.nav {
+.navbar {
     background-color: #15305a;
     height: 100%;
     width: 160px;
@@ -46,7 +36,7 @@ export default {
     overflow-x: hidden;
     padding-top: 20px;
 }
-.nav a{
+.navbar a{
     display: block;
     color: #fff;
     padding: 16px;
@@ -54,7 +44,7 @@ export default {
     font-size: 1rem;
     text-decoration: none;
 }
-.nav a:hover {
+.navbar a:hover {
     background: #0f2342;
 }
 .current-user {

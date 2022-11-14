@@ -1,5 +1,5 @@
 <template>
-    <Header/>
+    <Header :username="username" />
     <section>
         <div class="header-content">
             <h2>Veckans meny</h2>
@@ -12,8 +12,6 @@
                         <p>Onsdag: </p>
                         <p>Torsdag: </p>
                         <p>Fredag: </p>
-                        <p>Lördag: </p>
-                        <p>Söndag: </p>
                     </div>
                     <div class="week-meny">
                         <input type="text" name="monday" placeholder="Måndag" v-model="meny.day.monday" />
@@ -21,15 +19,13 @@
                         <input type="text" name="wednesday" placeholder="Onsdag" v-model="meny.day.wednesday" />
                         <input type="text" name="thursday" placeholder="Torsdag" v-model="meny.day.thursday" />
                         <input type="text" name="friday" placeholder="Fredag" v-model="meny.day.friday" />
-                        <input type="text" name="saturday" placeholder="Lördag" v-model="meny.day.saturday" />
-                        <input type="text" name="sunday" placeholder="Söndag" v-model="meny.day.sunday" />
                     </div>
                     <div class="week-info">
                         <p>Inkluderar: </p>
                         <p>Pris: </p>
                     </div>
                     <div class="week-info">
-                        <textarea name="Text1" cols="40" rows="3" placeholder="Inkluderar.." v-model="meny.extra"></textarea>
+                        <textarea name="Text1" cols="40" rows="4" placeholder="Inkluderar.." v-model="meny.extra"></textarea>
                         <input type="text" name="price" placeholder="Pris" v-model="meny.price" />
                     </div>
                 </div>
@@ -49,15 +45,14 @@ export default {
     },
     data() {
         return {
+            username: '',
             meny: {
                 day: {
                 monday: '',
                 tuesday: '',
                 wednesday: '',
                 thursday: '',
-                friday: '',
-                saturday: '',
-                sunday: ''
+                friday: ''
             },
             price: '',
             extra: '',
@@ -75,8 +70,6 @@ export default {
                 wednesday: this.meny.day.wednesday,
                 thursday: this.meny.day.thursday,
                 friday: this.meny.day.friday,
-                saturday: this.meny.day.saturday,
-                sunday: this.meny.day.sunday
             }
             });
             console.log(result.status)
@@ -90,6 +83,7 @@ export default {
         if(!user) {
             this.$router.push({name: 'Login'})
         }
+        this.username = JSON.parse(user).username;
         const result = await axios.get('http://localhost:3000/meny/1');
         this.meny = result.data
     }
@@ -98,22 +92,22 @@ export default {
 <style>
 .form-container {
     width: 90%;
+    margin-top: 4em;
 }
 .week-days input, .week-meny input {
     width: 400px;
-    height: 30px;
+    height: 40px;
     padding-left: 10px;
 }
 .week-days, .week-info {
     text-align: left;
 }
 .week-days p {
-    margin-top: 0.5em;
-    margin-bottom: 2.6em;
+    margin-top: 1em;
+    margin-bottom: 3.4em;
 }
 .week-info p {
-    margin-top: 0.5em;
-    margin-bottom: 4.2em;
+    margin-bottom: 6em;
 }
 .week-info input {
     width: 35px;

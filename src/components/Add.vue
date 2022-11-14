@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header :username="username" />
   <section>
     <div class="header-content">
       <h2>Ny restaurang</h2>
@@ -61,6 +61,7 @@ import Header from './Header.vue';
     },
     data() {
       return {
+        username: '',
         restaurant: {
           city: '',
           street: '',
@@ -128,6 +129,7 @@ import Header from './Header.vue';
           {
               this.$router.push({name: 'Login'})
           }
+          this.username = JSON.parse(user).username;
       }
   }
 </script>

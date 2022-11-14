@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header :username="username" />
   <section>
     <div class="header-content">
       <h2>Restauranger</h2>
@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       name: '',
+      username: '',
       restaurant: [],
     }
   },
@@ -54,7 +55,6 @@ export default {
   methods: {
     async deleteRestaurant(id) {
       let result = await axios.delete("http://localhost:3000/restaurant/"+id);
-      console.log(result)
       if(result.status == 200){
         this.loadData();
       }
@@ -70,6 +70,7 @@ export default {
     if(!user) {
       this.$router.push({name: 'Login'})
     }
+    this.username = JSON.parse(user).username;
     this.loadData()
   }
 }
@@ -80,7 +81,7 @@ table{
   table-layout: fixed;
 }
 .tbl-header{
-  background-color: #bcd6ff;
+  background-color: #bce5ff8c;
  }
 .tbl-content{
   height: 300px;

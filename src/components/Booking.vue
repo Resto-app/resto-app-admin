@@ -1,5 +1,5 @@
 <template>
-    <Header />
+    <Header :username="username" />
     <section>
         <div class="header-content">
             <h2>Bokningar</h2>
@@ -47,6 +47,7 @@ export default {
     },
     data() {
         return {
+            username: '',
             restaurants: [],
             onClicked: false,
             searchValue: '',
@@ -83,6 +84,7 @@ export default {
         if(!user) {
             this.$router.push({name: 'Login'})
         }
+        this.username = JSON.parse(user).username;
     }
 }
 </script>

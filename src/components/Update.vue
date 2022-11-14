@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <Header :username="username" />
   <section>
     <div class="header-content">
       <h2>Redigera restaurang</h2>
@@ -61,6 +61,7 @@
     },
     data() {
       return {
+        username: '',
         restaurant: {
           city: '',
           street: '',
@@ -126,6 +127,7 @@
           if(!user) {
               this.$router.push({name: 'Login'})
           }
+          this.username = JSON.parse(user).username;
           const result = await axios.get('http://localhost:3000/restaurant/'+this.$route.params.id);
           this.restaurant = result.data
       }
