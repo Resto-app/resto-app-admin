@@ -2,7 +2,7 @@
     <Header :username="username" />
     <section>
         <div class="header-content">
-            <h2>Bokningar</h2>
+            <h2>Bordsreservationer</h2>
         </div>
             <div class="select-wrapper">
                 <div class="select-btn" @click="toggleBox">
@@ -31,8 +31,8 @@
                     </ul>
                 </div>
             </div>
-            <div v-if="isSelected" class="booking-content">
-                <h3>This is booking content for {{ this.selectedRestaurant.city }}</h3>
+            <div v-if="isSelected" class="reservation-content">
+                <h3>This is reservation content for {{ this.selectedRestaurant.city }}</h3>
             </div>
     </section>
 </template>
@@ -167,7 +167,7 @@ export default {
 .options-wrapper {
     text-align: left;
 }
-.booking-content {
+.reservation-content {
     display: fixed;
     position: absolute;
     top: 120px;

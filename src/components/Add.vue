@@ -118,7 +118,7 @@ import Header from './Header.vue';
         })
         if(result.status == 201)
         {
-          this.$router.push({name: 'Home'})
+          this.$router.push({name: 'Restaurants'})
         }
       }
     },

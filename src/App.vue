@@ -36,7 +36,7 @@ section {
 h2 {
   text-align: left;
 }
-.login-form input, .contact-info input, .time-info input, .update input, .week-days input, .week-meny input, .week-info input {
+.login-form input, .contact-info input, .time-info input, .update input, .week-meny-form input, .week-info-form input {
     width: 300px;
     height: 40px;
     padding-left: 20px;
@@ -74,13 +74,16 @@ form button, .update button {
   text-decoration: none;
   color: #fff;
 }
+.save-action {
+    margin-bottom: 3em;
+}
 .form-container {
   display: flex;
   justify-content: space-around;
   width: 80%;
   margin: 0 auto;
   margin-top: 2em;
-  margin-bottom: 3em;
+  margin-bottom: 2em;
 }
 .form-container p {
   font-size: 0.8rem;

@@ -2,9 +2,9 @@
     <header>
         <nav class="navbar">
             <p class="current-user"><font-awesome-icon icon="fa-solid fa-user" /> {{ username }}</p>
-            <router-link to="/">Restauranger</router-link>
+            <router-link to="/restaurants">Restauranger</router-link>
             <router-link to="/meny">Meny</router-link>
-            <router-link to="/booking">Bokningar</router-link>
+            <router-link to="/reservation">Reservationer</router-link>
             <a @click="logout" href="/">Logga ut</a>
         </nav>
     </header>

@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <button type="button" class="action-link" @click="updateRestaurant">Spara</button>
+    <button type="button" class="action-link save-action" @click="updateRestaurant">Spara</button>
     </form>
   </section>
 </template>
@@ -118,18 +118,21 @@
         });
         console.log(result.status)
         if(result.status == 200){
-          this.$router.push({name: 'Home'})
+          this.$router.push({name: 'Restaurants'})
         }
+      },
+      async loadData() {
+          const result = await axios.get('http://localhost:3000/restaurant/'+this.$route.params.id);
+          this.restaurant = result.data
       }
     },
-    async mounted() {
+    mounted() {
           let user = localStorage.getItem('user-info');
           if(!user) {
               this.$router.push({name: 'Login'})
           }
           this.username = JSON.parse(user).username;
-          const result = await axios.get('http://localhost:3000/restaurant/'+this.$route.params.id);
-          this.restaurant = result.data
+          this.loadData();
       }
   }
   </script>

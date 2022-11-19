@@ -1,16 +1,16 @@
-import Home from "./components/Home.vue";
+import Restaurants from "./components/Restaurants.vue";
 import { createRouter, createWebHistory } from "vue-router";
 import Login from './components/Login.vue'
 import Add from './components/Add.vue'
 import Update from './components/Update.vue'
 import Meny from './components/Meny.vue'
-import Booking from './components/Booking.vue'
+import Reservation from './components/Reservation.vue'
 
 const routes = [
   {
-    name: "Home",
-    component: Home,
-    path: "/",
+    name: "Restaurants",
+    component: Restaurants,
+    path: "/restaurants",
   },
   {
     name: "Login",
@@ -33,9 +33,9 @@ const routes = [
     path: "/meny",
   },
   {
-    name: "Booking",
-    component: Booking,
-    path: "/booking",
+    name: "Reservation",
+    component: Reservation,
+    path: "/reservation",
   },
 ];
 

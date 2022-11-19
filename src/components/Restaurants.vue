@@ -54,17 +54,17 @@ export default {
   },
   methods: {
     async deleteRestaurant(id) {
-      let result = await axios.delete("http://localhost:3000/restaurant/"+id);
+      let result = await axios.delete('http://localhost:3000/restaurant/'+id);
       if(result.status == 200){
         this.loadData();
       }
     },
     async loadData() {
-      let result = await axios.get("http://localhost:3000/restaurant");
+      let result = await axios.get('http://localhost:3000/restaurant');
       this.restaurant = result.data
     }
   },
-  async mounted()
+  mounted()
   {
     let user = localStorage.getItem('user-info');
     if(!user) {
@@ -84,7 +84,7 @@ table{
   background-color: #bce5ff8c;
  }
 .tbl-content{
-  height: 300px;
+  height: 400px;
   overflow-x: auto;
   margin-top: 0px;
   border: 1px solid rgba(255,255,255,0.3);

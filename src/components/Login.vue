@@ -29,7 +29,7 @@ export default {
             )
             if(result.status==200 && result.data.length>0) {
                 localStorage.setItem("user-info", JSON.stringify(result.data[0]))
-                this.$router.push({name: 'Home'})
+                this.$router.push({name: 'Restaurants'})
             }
             else {
                 this.$router.push({name: 'Login'})
@@ -40,7 +40,7 @@ export default {
     {
         let user = localStorage.getItem('user-info');
         if(user) {
-            this.$router.push({name: 'Home'})
+            this.$router.push({name: 'Restaurants'})
         }
     }
 }
