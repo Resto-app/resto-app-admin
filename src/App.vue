@@ -1,9 +1,7 @@
 <template>
   <router-view />
 </template>
-
 <script>
-import '../src/style.css'
 export default {
   name: 'App',
 }
@@ -13,7 +11,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* font-family: 'Poppins', sans-serif; */
 }
 body {
   font-family: 'Montserrat', sans-serif;
@@ -98,7 +95,7 @@ form button, .update button {
   justify-content: space-between;
 }
 .time-days {
-  margin-top: 2.8em;
+  margin-top: 2.2em;
 }
 .contact-info p, .time-info p {
   margin-bottom: 1em;

@@ -1,41 +1,41 @@
-import Restaurants from "./components/Restaurants.vue";
-import { createRouter, createWebHistory } from "vue-router";
-import Login from './components/Login.vue'
-import Add from './components/Add.vue'
-import Update from './components/Update.vue'
-import Meny from './components/Meny.vue'
-import Reservation from './components/Reservation.vue'
+import { createRouter, createWebHistory } from "vue-router"
+import ListRestaurants from "./components/ListRestaurants.vue"
+import UserLogin from './components/UserLogin.vue'
+import AddRestaurant from './components/AddRestaurant.vue'
+import UpdateRestaurant from './components/UpdateRestaurant.vue'
+import UpdateMeny from './components/UpdateMeny.vue'
+import TableReservations from './components/TableReservations.vue'
 
 const routes = [
   {
-    name: "Restaurants",
-    component: Restaurants,
+    name: "ListRestaurants",
+    component: ListRestaurants,
     path: "/restaurants",
   },
   {
-    name: "Login",
-    component: Login,
+    name: "UserLogin",
+    component: UserLogin,
     path: "/login",
   },
   {
-    name: "Add",
-    component: Add,
+    name: "AddRestaurant",
+    component: AddRestaurant,
     path: "/add",
   },
   {
-    name: "Update",
-    component: Update,
+    name: "UpdateRestaurant",
+    component: UpdateRestaurant,
     path: "/update/:id",
   },
   {
-    name: "Meny",
-    component: Meny,
+    name: "UpdateMeny",
+    component: UpdateMeny,
     path: "/meny",
   },
   {
-    name: "Reservation",
-    component: Reservation,
-    path: "/reservation",
+    name: "TableReservations",
+    component: TableReservations,
+    path: "/reservations",
   },
 ];
 

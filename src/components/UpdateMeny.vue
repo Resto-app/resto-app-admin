@@ -1,5 +1,5 @@
 <template>
-    <Header :username="username" />
+    <NavigationSidebar :username="username" />
     <section>
         <div class="header-content">
             <h2>Veckans meny</h2>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="week-info-form">
                         <label class="label-size-medium">Inkluderar</label>
-                        <textarea name="Text1" cols="40" rows="4" placeholder="Inkluderar.." v-model="meny.extra"></textarea>
+                        <textarea name="Text1" cols="40" rows="4" placeholder="Inkluderar.." v-model.lazy="meny.extra"></textarea>
                         <label class="label-size-medium">Pris</label>
                         <input type="text" name="price" placeholder="Pris" v-model="meny.price" />
                     </div>
@@ -41,13 +41,12 @@
 </template>
 <script>
 import axios from 'axios';
-import Header from './Header.vue';
+import NavigationSidebar from './NavigationSidebar.vue';
 
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Meny',
+    name: 'UpdateMeny',
     components: {
-      Header
+        NavigationSidebar
     },
     data() {
         return {
@@ -86,31 +85,31 @@ export default {
                 price: this.meny.price,
                 extra: this.meny.extra,
                 day: {
-                monday: {
-                    dish: this.meny.day.monday.dish,
-                    dishDescription: this.meny.day.monday.dishDescription
-                },
-                tuesday: {
-                    dish: this.meny.day.tuesday.dish,
-                    dishDescription: this.meny.day.tuesday.dishDescription
-                },
-                wednesday: {
-                    dish: this.meny.day.wednesday.dish,
-                    dishDescription: this.meny.day.wednesday.dishDescription
-                },
-                thursday: {
-                    dish: this.meny.day.thursday.dish,
-                    dishDescription: this.meny.day.thursday.dishDescription
-                },
-                friday: {
-                    dish: this.meny.day.friday.dish,
-                    dishDescription: this.meny.day.friday.dishDescription
-                },
-            }
+                    monday: {
+                        dish: this.meny.day.monday.dish,
+                        dishDescription: this.meny.day.monday.dishDescription
+                    },
+                    tuesday: {
+                        dish: this.meny.day.tuesday.dish,
+                        dishDescription: this.meny.day.tuesday.dishDescription
+                    },
+                    wednesday: {
+                        dish: this.meny.day.wednesday.dish,
+                        dishDescription: this.meny.day.wednesday.dishDescription
+                    },
+                    thursday: {
+                        dish: this.meny.day.thursday.dish,
+                        dishDescription: this.meny.day.thursday.dishDescription
+                    },
+                    friday: {
+                        dish: this.meny.day.friday.dish,
+                        dishDescription: this.meny.day.friday.dishDescription
+                    },
+                }
             });
             console.log(result.status)
-            if(result.status == 200){
-            this.$router.push({name: 'Restaurants'})
+            if(result.status == 200) {
+            this.$router.push({name: 'ListRestaurants'})
             }
         },
         async loadData() {
@@ -121,10 +120,12 @@ export default {
     mounted() {
         let user = localStorage.getItem('user-info');
         if(!user) {
-            this.$router.push({name: 'Login'})
+            this.$router.push({name: 'UserLogin'})
         }
-        this.username = JSON.parse(user).username;
-        this.loadData();
+        else {
+            this.username = JSON.parse(user).username;
+            this.loadData();
+        }
     }
 }
 </script>

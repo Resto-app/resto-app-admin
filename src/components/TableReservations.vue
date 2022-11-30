@@ -1,5 +1,5 @@
 <template>
-    <Header :username="username" />
+    <NavigationSidebar :username="username" />
     <section>
         <div class="header-content">
             <h2>Bordsreservationer</h2>
@@ -38,12 +38,12 @@
 </template>
 <script>
 import axios from 'axios'
-import Header from './Header.vue'
+import NavigationSidebar from './NavigationSidebar.vue'
+
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Booking',
+    name: 'TableReservations',
     components: {
-        Header
+        NavigationSidebar
     },
     data() {
         return {
@@ -67,8 +67,8 @@ export default {
             this.selectedCity = restaurant.city
         },
         async loadData() {
-        let result = await axios.get("http://localhost:3000/restaurant");
-        this.restaurants = result.data;
+            let result = await axios.get("http://localhost:3000/restaurant");
+            this.restaurants = result.data;
         }
     },
     computed: {
@@ -82,9 +82,11 @@ export default {
     async mounted() {
         let user = localStorage.getItem('user-info');
         if(!user) {
-            this.$router.push({name: 'Login'})
+            this.$router.push({name: 'UserLogin'})
         }
-        this.username = JSON.parse(user).username;
+        else {
+            this.username = JSON.parse(user).username;
+        }
     }
 }
 </script>

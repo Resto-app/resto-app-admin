@@ -10,12 +10,11 @@
             </div>
     </div>
 </template>
-
 <script>
 import axios from 'axios'
+
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Login',
+    name: 'UserLogin',
     data() {
         return {
             email: '',
@@ -29,18 +28,17 @@ export default {
             )
             if(result.status==200 && result.data.length>0) {
                 localStorage.setItem("user-info", JSON.stringify(result.data[0]))
-                this.$router.push({name: 'Restaurants'})
+                this.$router.push({name: 'ListRestaurants'})
             }
             else {
-                this.$router.push({name: 'Login'})
+                this.$router.push({name: 'UserLogin'})
             }
         }        
     },
-    mounted()
-    {
+    mounted() {
         let user = localStorage.getItem('user-info');
         if(user) {
-            this.$router.push({name: 'Restaurants'})
+            this.$router.push({name: 'ListRestaurants'})
         }
     }
 }

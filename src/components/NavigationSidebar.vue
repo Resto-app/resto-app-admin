@@ -4,22 +4,20 @@
             <p class="current-user"><font-awesome-icon icon="fa-solid fa-user" /> {{ username }}</p>
             <router-link to="/restaurants">Restauranger</router-link>
             <router-link to="/meny">Meny</router-link>
-            <router-link to="/reservation">Reservationer</router-link>
-            <a @click="logout" href="/">Logga ut</a>
+            <router-link to="/reservations">Reservationer</router-link>
+            <router-link to="/login" @click="logoutUser">Logga ut</router-link>
         </nav>
     </header>
 </template>
 <script>
 export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Header',
+    name: 'NavigationSidebar',
     props: {
         username: String
     },
     methods: {
-        logout() {
+        logoutUser() {
             localStorage.clear();
-            this.$router.push({name: 'Login'})
         }
     }
 }
@@ -55,27 +53,4 @@ export default {
     margin-bottom: 2em;
     text-align: left;
 }
-/* .nav {
-    background-color: #15305a;
-    overflow: hidden;
-}
-.nav a{
-    float: left;
-    color: #fff;
-    padding: 14px 16px;
-    text-align: center;
-    font-size: 17px;
-    text-decoration: none;
-    margin-right: 5px;
-}
-.nav a:hover {
-    background: #0f2342;
-}
-.current-user {
-    font-size: small;
-    color: #f2f2f2;
-    float: right;
-    margin-right: 1rem;
-    margin-top: 0.8rem;
-} */
 </style>

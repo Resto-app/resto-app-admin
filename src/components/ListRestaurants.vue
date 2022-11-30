@@ -1,5 +1,5 @@
 <template>
-  <Header :username="username" />
+  <NavigationSidebar :username="username" />
   <section>
     <div class="header-content">
       <h2>Restauranger</h2>
@@ -37,11 +37,11 @@
   </section>
 </template>
 <script>
-import Header from './Header.vue'
+import NavigationSidebar from './NavigationSidebar.vue'
 import axios from 'axios'
+
 export default {
-  // eslint-disable-next-line vue/multi-word-component-names
-  name: 'Home',
+  name: 'ListRestaurants',
   data() {
     return {
       name: '',
@@ -50,7 +50,7 @@ export default {
     }
   },
   components: {
-    Header
+    NavigationSidebar
   },
   methods: {
     async deleteRestaurant(id) {
@@ -68,10 +68,12 @@ export default {
   {
     let user = localStorage.getItem('user-info');
     if(!user) {
-      this.$router.push({name: 'Login'})
+      this.$router.push({name: 'UserLogin'})
     }
-    this.username = JSON.parse(user).username;
-    this.loadData()
+    else {
+      this.username = JSON.parse(user).username;
+      this.loadData()
+    }
   }
 }
 </script>
@@ -112,10 +114,6 @@ td{
 tr:hover {
   background: #e2e5e8;
 }
-/* .tbl-content tbody tr:nth-child(odd) {
-    color: #ffffff;
-    background: #e2e5e8;
-} */
 .add-action {
   font-size: 0.8rem;
   font-weight: 500;

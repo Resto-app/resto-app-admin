@@ -1,5 +1,5 @@
 <template>
-  <Header :username="username" />
+  <NavigationSidebar :username="username" />
   <section>
     <div class="header-content">
       <h2>Ny restaurang</h2>
@@ -52,12 +52,12 @@
 </template>
 <script>
 import axios from 'axios';
-import Header from './Header.vue';
-  export default {
-    // eslint-disable-next-line vue/multi-word-component-names
-    name: 'Add',
+import NavigationSidebar from './NavigationSidebar.vue';
+
+export default {
+    name: 'AddRestaurant',
     components: {
-      Header
+      NavigationSidebar
     },
     data() {
       return {
@@ -116,20 +116,19 @@ import Header from './Header.vue';
             sunday: this.restaurant.closingHour.sunday,
           }
         })
-        if(result.status == 201)
-        {
-          this.$router.push({name: 'Restaurants'})
+        if(result.status == 201) {
+          this.$router.push({name: 'ListRestaurants'})
         }
       }
     },
-    mounted()
-      {
+    mounted() {
           let user = localStorage.getItem('user-info');
-          if(!user)
-          {
-              this.$router.push({name: 'Login'})
+          if(!user) {
+            this.$router.push({name: 'UserLogin'})
           }
-          this.username = JSON.parse(user).username;
+          else {
+            this.username = JSON.parse(user).username;
+          }
       }
   }
 </script>
