@@ -1,13 +1,13 @@
 <template>
     <div class="login-content">
-            <div class="login-form">
-                <h1>Logga in</h1>
-                <form>
-                    <input type="email" v-model="email" placeholder="E-postadress" />
-                    <input type="password" v-model="password" placeholder="Lösenord" />
-                    <button class="save-action action-link" @click="login">Logga in</button>
-                </form>
-            </div>
+        <div class="login-form">
+            <h1>Logga in</h1>
+            <form>
+                <input type="email" v-model="email" placeholder="E-postadress" />
+                <input type="password" v-model="password" placeholder="Lösenord" />
+                <button class="save-action action-link" @click="login">Logga in</button>
+            </form>
+        </div>
     </div>
 </template>
 <script>
