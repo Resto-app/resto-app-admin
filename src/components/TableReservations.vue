@@ -32,7 +32,7 @@
                 </div>
             </div>
             <div v-if="isSelected" class="reservation-content">
-                <h3>This is reservation content for {{ this.selectedRestaurant.city }}</h3>
+                <h3>Bordsreservationer för {{ this.selectedRestaurant.city }}</h3>
             </div>
     </section>
 </template>

@@ -67,7 +67,7 @@ export default {
   mounted()
   {
     let user = localStorage.getItem('user-info');
-    if(!user) {
+    if(user == null) {
       this.$router.push({name: 'UserLogin'})
     }
     else {
