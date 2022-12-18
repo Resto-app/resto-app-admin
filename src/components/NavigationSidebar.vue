@@ -2,7 +2,7 @@
     <header>
         <nav class="navbar">
             <p class="current-user"><font-awesome-icon icon="fa-solid fa-user" /> {{ username }}</p>
-            <router-link to="/restaurants">Restauranger</router-link>
+            <router-link to="/">Restauranger</router-link>
             <router-link to="/meny">Meny</router-link>
             <router-link to="/reservations">Reservationer</router-link>
             <router-link to="/login" @click="logoutUser">Logga ut</router-link>
